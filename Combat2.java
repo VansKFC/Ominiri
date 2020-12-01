@@ -42,7 +42,7 @@ public class Main extends JavaPlugin implements Listener {
        if(cmd.getName().equalsIgnoreCase("redbull")) {
 		   p2.sendMessage(ChatColor.GREEN + "drinked redbull!");
 		   p2.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(25.0D); //set run speed to 25+ so fast amk
-		   Thread.sleep(5000);
+		   Thread.sleep(10000);
 		   
 		   return false;
 	   }   
