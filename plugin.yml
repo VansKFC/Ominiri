@@ -1,0 +1,7 @@
+name: Combat
+version: 1
+api-version: 1.14
+main: combat.main.Main
+commands:
+   info:
+      description: Displays player information.
