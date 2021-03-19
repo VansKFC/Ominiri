@@ -14,39 +14,34 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
   @EventHandler
-  public void onJoin(PlayerJoinEvent event)
-  {
+  public void onJoin(PlayerJoinEvent event) {
     Player p = event.getPlayer();
     p.getAttribute(Attribute.GENERIC_ATTACK_SPEED).setBaseValue(5.0D);
     p.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(2.4D);
-    p.sendMessage(ChatColor.RED + "Welcome to Ominiri!");
-    p.sendMessage(ChatColor.LIGHT_PURPLE + "No rules, just enjoy yourself :)");
+    p.sendMessage("" + ChatColor.RED + "Welcome to Ominiri!");
+    p.sendMessage("" + ChatColor.LIGHT_PURPLE + "No rules, just enjoy yourself :)");
   }
   
-  public void onEnable()
-  {
+  public void onEnable() {
     Bukkit.getServer().getPluginManager().registerEvents(this, (Plugin)this);
   }
   
-  public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
-  {
+  public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
     Player p = (Player)sender;
-    if (cmd.getName().equalsIgnoreCase("info"))
-    {
-      p.sendMessage(ChatColor.RED + p.getDisplayName());
-      p.sendMessage(ChatColor.GREEN + "HP: " + p.getHealth());
-      p.sendMessage(ChatColor.DARK_BLUE + "kills: " + p.getKiller());
-    }
+    if (cmd.getName().equalsIgnoreCase("info")) {
+      p.sendMessage("" + ChatColor.RED + ChatColor.RED);
+      p.sendMessage("" + ChatColor.GREEN + "HP: " + ChatColor.GREEN);
+      p.sendMessage("" + ChatColor.DARK_BLUE + "kills: " + ChatColor.DARK_BLUE);
+    } 
     return false;
   }
-  public boolean onCommand2(CommandSender sender, Command cmd, String label, String[] args)
-  {
+  
+  public boolean onCommand2(CommandSender sender, Command cmd, String label, String[] args) {
     Player p = (Player)sender;
-    if(cmd.getName().equalsIgnoreCase("redbull"))
-    {
-      p.sendMessage(ChatColor.GREEN + "Drank Redbull!");
+    if (cmd.getName().equalsIgnoreCase("redbull")) {
+      p.sendMessage("" + ChatColor.GREEN + "Drank Redbull!");
       p.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(25.0D);
-    }
+    } 
     return false;
   }
 }
